@@ -1,0 +1,25 @@
+article ul li {
+    list-style: none;
+    display: inline-block;
+    float: auto;
+}
+
+#firstli {
+    background-color: darkgray;
+}
+
+#secondli {
+    background-color: darkkhaki;
+}
+
+#thirdli {
+    background-color: darksalmon;
+}
+
+#forthli {
+    background-color: darkseagreen;
+}
+
+ul li {
+    padding: 0%;
+}
