@@ -1,7 +1,6 @@
 article ul li {
     list-style: none;
     display: inline-block;
-    float: auto;
 }
 
 #firstli {

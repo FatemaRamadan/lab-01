@@ -1,43 +1,56 @@
+/*Mobile first*/
+
 header {
+    order: 1;
     text-align: center;
-    width: 480px;
+    width: 100%;
     height: 75px;
     background-color: aqua;
 }
 
 section {
+    order: 2;
     text-align: center;
-    width: 480px;
+    width: 100%;
     height: 150px;
     background-color: rgba(173, 44, 233, 0.178);
 }
 
 div {
+    order: 4;
     text-align: center;
-    width: 480px;
+    width: 100%;
     height: 125px;
     background-color: rgba(73, 7, 20, 0.267);
 }
 
 #first {
+    order: 3;
+    width: 100%;
+    height: 192px;
+    grid-area: 1/2/2/6;
     background-color: cornflowerblue;
 }
 
 article {
-    display: inline-block;
+    width: 100%;
+    order: 5;
+    display: grid;
+    grid-column: 50% 50%;
+    grid-area: 3/2/4/6;
 }
 
 article ul li {
-    width: 240px;
+    width: 50%;
     height: 250px;
 }
 
 footer {
-    width: 480px;
+    margin-top: -15px;
+    width: 100%;
     height: 80px;
     text-align: center;
     background-color: darkviolet;
-    margin-top: -4px;
 }
 
 ul {
@@ -52,47 +65,121 @@ li {
     float: left;
 }
 
+
+/*tablet view*/
+
 @media( min-width: 768px) {
+    main {
+        display: grid;
+        grid-template-columns: repeat(3, 200px 50% 50%);
+        grid-template-rows: 192px 192px 192px 25px;
+    }
     header {
         width: 960px;
         height: 100px;
+        background-color: rgba(6, 180, 20, 0.37);
+        order: 1;
+    }
+    section {
+        order: 2;
+        width: 200px;
+        height: 600px;
+        float: left;
+        background-color: rgba(8, 32, 245, 0.37);
+    }
+    #first {
+        order: 3;
+        width: 75%;
+        height: 192px;
+        background-color: rgba(15, 56, 236, 0.37);
+        grid-area: 1/2/2/6;
+    }
+    div {
+        order: 4;
+        height: 192px;
+        grid-area: 2/2/2/6;
+        background-color: rgba(216, 25, 25, 0.37);
+    }
+    article {
+        order: 5;
+        display: grid;
+        grid-column: 25% 25% 25% 25%;
+        grid-area: 3/2/4/6;
+    }
+    article ul li {
+        width: 170px;
+        height: 215px;
+    }
+    #firstli {
+        background-color: rgb(83, 75, 75);
+    }
+    #secondli {
+        background-color: rgb(238, 233, 167);
+    }
+    #thirdli {
+        background-color: rgb(65, 23, 10);
+    }
+    #forthli {
+        background-color: rgb(90, 134, 90);
+    }
+    footer {
+        width: 100%;
+        height: 150px;
+        background-color: rgba(31, 37, 33, 0.747);
+        margin-top: -2px;
+    }
+}
+
+
+/*computer view*/
+
+@media( min-width: 992px) {
+    main {
+        display: grid;
+        grid-template-columns: repeat(3, 200px 50% 50%);
+        grid-template-rows: 192px 192px 192px 25px;
+    }
+    header {
+        width: 100%;
+        height: 100px;
         background-color: rgba(228, 206, 15, 0.37);
+        order: 1;
     }
     section {
         width: 200px;
         height: 600px;
-        float: left;
+        order: 2;
         background-color: rgba(245, 103, 8, 0.37);
     }
+    #first {
+        order: 3;
+        width: 75%;
+        height: 192px;
+        background-color: rgba(15, 56, 236, 0.37);
+        grid-area: 1/2/2/6;
+    }
     div {
-        float: left;
-        position: relative;
+        order: 4;
+        height: 192px;
+        grid-area: 2/2/2/6;
         background-color: rgba(216, 25, 25, 0.37);
     }
-    footer {
-        width: 760px;
-        height: 150px;
-        background-color: rgba(15, 235, 81, 0.747);
-        margin-left: 200px;
-    }
-    #fisrt {
-        width: 380px;
-        height: 200px;
-        background-color: rgba(15, 56, 236, 0.37);
-    }
-    div {
-        width: 380px;
-        height: 200px;
-        background-color: rgba(118, 5, 163, 0.37);
+    article {
+        order: 5;
+        display: grid;
+        grid-column: 25% 25% 25% 25%;
+        grid-area: 3/2/4/6;
     }
     article ul li {
-        width: 190px;
-        height: 250px;
+        width: 15.2%;
+        height: 218px;
     }
     #firstli {
+        order: 5;
         background-color: rgb(65, 7, 7);
     }
     #secondli {
+        order: 6;
         background-color: rgb(133, 124, 9);
     }
     #thirdli {
@@ -100,5 +187,12 @@ li {
     }
     #forthli {
         background-color: rgb(16, 238, 16);
+    }
+    footer {
+        order: 6;
+        width: 100%;
+        height: 150px;
+        background-color: rgba(15, 235, 81, 0.747);
+        clear: both;
     }
 }
